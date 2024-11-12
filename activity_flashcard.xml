@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <!-- Refresh Button (Top Left) -->
+    <ImageButton
+        android:id="@+id/refreshButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_rotate"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/refresh_button_desc"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+
+    <!-- Dropdown Spinner for HSK Levels (Top Center) -->
+    <Spinner
+        android:id="@+id/hskSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:entries="@array/hsk_levels" />
+
+    <!-- Progress TextView (Top Right) -->
+    <TextView
+        android:id="@+id/progressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/progress_text_default"
+        android:textSize="16sp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/orange"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="32dp"
+        android:layout_margin="30dp" />
+
+    <!-- Flashcard Character Text (Center, moved up by 10dp) -->
+    <TextView
+        android:id="@+id/characterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textColor="@color/pink"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="200dp" />
+
+    <!-- Pinyin Text (Below Character) -->
+    <TextView
+        android:id="@+id/pinyinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textColor="@color/salmon"
+        app:layout_constraintTop_toBottomOf="@id/characterView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+    <!-- English Text (Below Pinyin, moved down by 10dp) -->
+    <TextView
+        android:id="@+id/englishView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textColor="@color/red"
+        app:layout_constraintTop_toBottomOf="@id/pinyinView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <!-- Invisible Left Half for Backward Navigation -->
+    <View
+        android:id="@+id/leftHalf"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/hskSpinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rightHalf" />
+
+    <!-- Invisible Right Half for Forward Navigation -->
+    <View
+        android:id="@+id/rightHalf"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/hskSpinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/leftHalf"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

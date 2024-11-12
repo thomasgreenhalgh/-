@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">学习</string>
+    <string name="refresh_button_desc">Refresh</string>
+    <string name="progress_text_default">00/00</string>
+    <string-array name="hsk_levels">
+        <item>HSK 1</item>
+        <item>HSK 2</item>
+        <item>HSK 3</item>
+        <item>HSK 4</item>
+        <item>HSK 5</item>
+        <item>HSK 6</item>
+        <item>Radicals</item>
+    </string-array>
+</resources>
