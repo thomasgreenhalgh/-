@@ -1,1 +1,1 @@
-# 学习 - App to practice Chinese
+# 学习 - Android App to practice Chinese
